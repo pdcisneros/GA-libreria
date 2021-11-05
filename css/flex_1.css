@@ -1,0 +1,306 @@
+/* Home con flex */
+
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Mi lista de colores */
+#mis_colores {
+    color: #07020d;
+    color: #5db7de;
+    color: #f1e9db;
+    color: #a39b8b;
+    color: #716a5c;
+}
+
+
+/* Estilos globales */
+body {
+    background-color: #f1e9db;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5em;
+}
+
+section, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh; /* Setear un alto mínimo hace que el contenedor crezca y tome más espacio en caso de ser necesario */
+}
+
+img {
+    width: 100%;
+}
+
+    /* Header y la img de presentación están escondidas*/
+    #header {
+        display: none;
+    }
+
+    #bienvenida img {
+        display: none;
+    }
+
+
+/* Presentacion */
+#presentacion {
+    background-color: #07020d;
+}
+
+#presentacion img {
+    max-width: 800px;
+    margin: 0 30px;
+}
+
+/* Bienvenida */
+#bienvenida {
+    background-image: url("../img/bienvenida.jpg");
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#bienvenida h1 {
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+    color: #f1e9db;
+    background-color: #07020daf;
+    padding: 2em;
+}
+
+/* Libros y Novedades */
+#novedades {
+    flex-direction: column;
+    text-align: center;
+}
+
+#novedades h1 {
+    color: #716a5c;
+}
+
+#novedades h2 {
+    color: #07020d;
+    font-size: 1em;
+}
+
+#novedades article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    min-width: 220px;
+    margin: 2em;
+    text-align: center;
+}
+
+#novedades p {
+    margin-top: -0.5em;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 80vw;
+    overflow-y: hidden;
+    overflow-x:visible;
+
+    padding: 0 0.5em;
+}
+
+.controles ul {
+    padding: 0;
+}
+
+.controles li{
+    display: inline-block;
+}
+
+#siguiente, #anterior {
+    min-height: 6em;
+    min-width: 6em;
+    border-radius: 3em;
+    background-color:#716a5c;
+    color: #f1e9db;
+}
+
+#siguiente:hover, #anterior:hover {
+    background-color:#5db7de;
+    color:#07020d;
+    font-weight: 800;
+}
+
+/* Links */
+#novedades a:link {
+    font-weight: 700;
+    color: #07020d;
+    border: 0.2em solid #07020d;
+    border-radius: 1em;
+    padding: 0.2em 0.5em;
+}
+
+#novedades a:visited {
+    color: #07020d;
+}
+
+#novedades a:hover {
+    background-color: #5db7de;
+}
+
+#novedades a:active {
+    color: #07020d;
+}
+
+/* Footer */
+footer {
+    background-color: #716a5c;
+    flex-direction: column;
+    color: #f1e9db;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+footer iframe {
+    border: none;
+    display: block;
+    width: 85vh;
+    height: 65vh;
+}
+
+footer input {
+    background-color:#07020d;
+    color: #f1e9db;
+    font-weight: 400;
+    border-radius: 1em;
+    padding: 0.7em 1.3em;
+    border: none;
+}
+
+footer input:hover {
+    background-color: #5db7de;
+    color: #07020d;
+}
+
+/* Formulario de Contacto */
+#contacto {
+    min-height: 81vh;
+    display: flex;
+}
+
+#contacto form {
+    width:220px;
+    margin: 0 auto;
+}
+
+#contacto input {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    margin:0px 0px 10px 0px;
+    border: 2px solid #716a5c;
+    border-radius: 7px;
+    width:200px;
+}
+
+#contacto textarea {
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #716a5c;
+    border-radius: 7px;
+    padding:5px;
+    width: 210px;
+    height: 100px;
+}
+
+#contacto input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #5db7de;
+    border-radius: 7px;
+}
+
+#contacto select {
+    font-family: 'Montserrat', sans-serif;
+    padding:10px;
+}
+
+#contacto .submit {
+    width:224px;
+    background-color:#5db7de;
+    border-radius: 100px;
+}
+
+#contacto .checkbox, .radio {
+    margin:5px;
+    padding:0;
+    width: auto;
+}
+
+
+/* Libros */
+#libro {
+    margin-top: 2em;
+    justify-content: center;
+}
+
+.izquierda {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.izquierda img {
+    min-width: 247px;
+    margin: 1em;
+}
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 1em;
+    max-width: 550px;
+}
+
+.derecha h1 {
+    margin: 0;
+}
+
+.derecha a:link {
+    display: block;
+    padding: 0.75em;
+    border: 0.25em solid #5db7de;
+    border-radius: 1em;
+    margin-bottom: 0.75em;
+    color: #07020d;
+}
+
+.derecha a:visited {
+    color: #07020d;
+    border: 0.25em solid #5db7de;
+}
+
+.derecha a:hover {
+    color: #f1e9db;
+    border: 0.25em solid #5db7de;
+    background-color: #5db7de;
+}
+
+.derecha a:active {
+    border: 0.25em solid #5db7de;
+}

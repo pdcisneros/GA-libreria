@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Libreria | Gracias por tu mensaje</title>
+    <link rel="stylesheet" href="css/flex_2.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <header id="header">
+        <nav>
+            <a href="index.html"><img src="img/logo.svg" alt="Bienvenidos a la Librería, Tienda Online"></a>
+            <ul>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a id="menu_contacto" onclick="gtag('event', 'Click', {'event_category': 'Click Menu Contacto', 'event_label': 'Contacto'});" href="contacto.html">Contacto</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+            <form action="">
+                <label>
+                    <input type="text" name="palabraClave">
+                </label>
+                <input type="submit" name="buscar" value="Buscar">
+            </form>
+        </nav>
+    </header>
+
+    <section id="contacto">
+        <h1>Gracias por su mensaje</h1>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h1>Ubicación</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.8049548826625!2d-58.393169584770185!3d-34.60909328045804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac32291c5c5%3A0x622457900e987e8d!2sAv.%20Rivadavia%201725%2C%20C1089%20CABA!5e0!3m2!1ses-419!2sar!4v1629672369868!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy"></iframe>
+        <ul>
+            <li>Av. Rivadavia 1725 - CABA</li>
+            <li>011 7777-4455</li>
+            <li>contacto@lalibreria.com.ar</li>
+            <li><input type="submit" onclick="alternar()" value="Alternar"></li>
+            <li><input type="submit" onclick="cambiar('css/flex_1.css')" value="Estilo 1"></li>
+            <li><input type="submit" onclick="cambiar('css/flex_2.css')" value="Estilo 2"></li>
+        </ul>
+    </footer>
+
+
+
+
+
+        <!-- Script para nuestras funciones de javascript -->
+        <script>
+            // Controles para el scroll de los libros
+            var button = document.getElementById('siguiente');
+            button.onclick = function () {
+                var container = document.getElementById('contenedor');
+                sideScroll(container,'right',25,100,10);
+            };
+        
+            var back = document.getElementById('anterior');
+            back.onclick = function () {
+                var container = document.getElementById('contenedor');
+                sideScroll(container,'left',25,100,10);
+            };
+        
+            function sideScroll(element,direction,speed,distance,step){
+                scrollAmount = 0;
+                var slideTimer = setInterval(function(){
+                    if(direction == 'left'){
+                        element.scrollLeft -= step;
+                    } else {
+                        element.scrollLeft += step;
+                    }
+                    scrollAmount += step;
+                    if(scrollAmount >= distance){
+                        window.clearInterval(slideTimer);
+                    }
+                }, speed);
+            }
+
+        // Para cambiar la hoja de estilos con un solo botón
+        function alternar() {
+            /* Levanta un array con el contenido del elemento <link>
+            y selecciona el elemento específico usando indexing. */
+            var theme = document.getElementsByTagName('link')[0];
+    
+            /* Cambia el atributo href para cambiar la hoja de estilos*/
+            if (theme.getAttribute('href') == 'css/flex_1.css') {
+                 theme.setAttribute('href', 'css/flex_2.css');
+            } else {
+                theme.setAttribute('href', 'css/flex_1.css');
+            }
+        }
+
+        // Para cambiar la hoja de estilos cuando tenemos más de una
+        function cambiar(value) {
+            /* Obtiene el nombre de la hoja de estilos y lo setea como 
+            un parámetro usando el atributo href */
+            var sheets = document
+                .getElementsByTagName('link');
+
+            sheets[0].href = value;
+            }
+        </script>
+</body>
+</html>
